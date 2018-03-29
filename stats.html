@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<body>
+  <body style="background-color:#FF4D4D;">
+
+<h1>Your statistics Page</h1>
+
+<div id="piechart"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Task', 'Grade distribution'],
+  ['As', 8],
+  ['Bs', 8],
+  ['Cs', 6],
+  ['Ds', 4],
+  ['Fs', 2]
+]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {'title':'My Average Day', 'width':550, 'height':400};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+}
+</script>
+<pre>
+  <h1>Last year</h1>	         A	B	C	  D      F
+  December	 3.6%	46.0%	44.4%	  2.7%	2.4%
+  November	 3.1%	47.0%	44.2%	  2.7%	2.3%
+  October	 3.0%	47.4%	44.0%	  2.8%	2.2%
+  September	 3.1%	49.0%	42.7%	  2.7%	2.0%
+  August	 51.0%	43.7%	2.60%	  2.1%  0.0%
+  July	 	 52.4%	42.6%	2.90%	  1.9%  0.0%
+  June	   	 54.2%	41.0%	2.60%	  1.7%  0.0%
+  May	         54.4%	39.8%	2.40%	  1.5%  0.0%
+  April	 	 54.8%	39.1%	2.20%	  1.4%  0.0%
+  March	 	 53.9%	37.0%	2.10%	  1.4%  0.0%
+  February	 54.7%	36.5%	2.00%	  1.4%  0.0%
+  January	 54.7%	36.4%	1.90%  	  1.4%  0.0%
+
+
+</body>
+</html>
